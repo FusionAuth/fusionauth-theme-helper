@@ -14,7 +14,7 @@ const client = new FusionAuthClient(apiKey, fusionauthUrl);
 fs.watch(tmpFolder, (event, filename) => {
   if (filename) {
     const obj = {}
-    if ! filename.endsWith(".ftl") {
+    if (! filename.endsWith(".ftl")) {
       // ignore non template files
       return;
     }
@@ -35,7 +35,7 @@ fs.watch(tmpFolder, (event, filename) => {
 
     const toUpload = wrapper; //JSON.stringify(wrapper);
     client.patchTheme(themeId,toUpload).then(clientResponse => {
-        console.log("uploaded...");
+        console.log("uploaded "+filename);
     }).catch(console.error);
   }
 });
