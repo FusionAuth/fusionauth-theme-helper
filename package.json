@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "node ./startwatch.js"
+  },
+  "dependencies": {
+    "@fusionauth/typescript-client": "^1.36.0"
+  }
+}
