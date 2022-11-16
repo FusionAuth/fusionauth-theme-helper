@@ -1,3 +1,6 @@
+# Theme helper
+
+This repository has some tools to help with FusionAuth theme management. More about FusionAuth themes: https://fusionauth.io/docs/v1/tech/themes/
 
 This repository is for helping you edit, develop and manage FusionAuth themes.
 
