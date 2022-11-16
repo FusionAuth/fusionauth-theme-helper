@@ -1,6 +1,9 @@
 'use strict';
 
-const tmpFolder = './tmp/';
+const dotenv = require('dotenv').config();
+
+const tmpFolder = './'+process.env.TMP_DIR+'/';
+
 const fs = require('fs');
 const obj = {}
 
