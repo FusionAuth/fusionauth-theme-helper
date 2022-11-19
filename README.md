@@ -36,4 +36,6 @@ You can do a final upload by running `upload.sh`.
 
 ## TODO
 
-Have the stylesheet and messages files handled as well. Only templates are supported currently.
+Have the stylesheet and messages files handled as well. Only templates and default messages are supported currently.
+
+Remove json files used in the download, rather than just gitignoring them.
