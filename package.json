@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "node ./startwatch.js"
+    "watch": "node --dns-result-order ipv4first ./startwatch.js"
   },
   "dependencies": {
     "dotenv": "^16.0.3",

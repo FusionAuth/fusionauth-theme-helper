@@ -15,6 +15,7 @@ This repository is for helping you edit, develop and manage FusionAuth themes.
 
 * `npm install`
 * update `.env.sample` with your API key, FusionAuth hostname, and theme id and copy it to `.env`
+* you can modify the TMP_DIR to be whereever you'd like it to be, the default is `tmp` in the current directory.
 
 The API key must have `/api/theme` permissions, at least `GET` and `PATCH`.
 
@@ -24,18 +25,16 @@ Run `download.sh` to pull down all the freemarker files.
 
 Commit them to version control.
 
-In a separate terminal, run `node startwatch.js`. This will upload any templates that are modified.
+In a separate terminal, run `npm run watch`. This will upload any modified templates.
 
 Edit the files using whatever local editor you want.
 
-In the browser, reload the themed pages and see your chnages live.
+In the browser, reload the themed pages and see your changes live.
 
 When done, commit changes to version control.
 
-You can do a final upload by running `upload.sh`.
+You can do a final upload of whatever is in the TMP_DIR by running `upload.sh`.
 
 ## TODO
 
 Have the stylesheet and messages files handled as well. Only templates and default messages are supported currently.
-
-Remove json files used in the download, rather than just gitignoring them.
