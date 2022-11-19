@@ -16,6 +16,8 @@ This repository is for helping you edit, develop and manage FusionAuth themes.
 * `npm install`
 * update `.env.sample` with your API key, FusionAuth hostname, and theme id and copy it to `.env`
 
+The API key must have `/api/theme` permissions, at least `GET` and `PATCH`.
+
 ## Usage
 
 Run `download.sh` to pull down all the freemarker files.
