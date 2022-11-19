@@ -36,4 +36,4 @@ You can do a final upload by running `upload.sh`.
 
 ## TODO
 
-Have the messages file handled as well. Only templates are supported currently.
+Have the stylesheet and messages files handled as well. Only templates are supported currently.
