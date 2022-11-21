@@ -28,6 +28,14 @@ fs.readdirSync(tmpFolder).forEach(file => {
   theme["defaultMessages"] = String(rawdata)
 });
 
+fs.readdirSync(tmpFolder).forEach(file => {
+  if (!file.endsWith(".css")) {
+    return;
+  }
+  let rawdata = fs.readFileSync(tmpFolder+file);
+  theme["stylesheet"] = String(rawdata)
+});
+
 const wrapper = {};
 wrapper['theme'] = theme;
 
