@@ -1,10 +1,12 @@
 # Theme helper
 
-This repository has some tools to help with FusionAuth theme management. More about FusionAuth themes: https://fusionauth.io/docs/v1/tech/themes/
+This repository has tools to help with FusionAuth theme management. It offers syncing to and from your local system.
 
-This repository is for helping you edit, develop and manage FusionAuth themes.
+This repository is for helping you edit, develop and manage FusionAuth themes locally.
 
 Because these helper scripts uploads the results of your changes in real-time, it is best used on non-production systems.
+
+More about FusionAuth themes: https://fusionauth.io/docs/v1/tech/themes/
 
 ## Prerequisites
 
@@ -27,11 +29,11 @@ Run `download.sh` to pull down all the freemarker files.
 
 Commit them to version control.
 
-In a separate terminal, run `npm run watch`. This will upload any modified templates.
+In a separate terminal, run `npm run watch`. This will upload any modified templates and will overwrite anything present in the remote system whenever a local file changes. 
 
 Edit the files using whatever local editor you want.
 
-In the browser, reload the themed pages and see your changes live.
+In the browser, reload themed pages and see your changes live.
 
 When done, commit changes to version control.
 

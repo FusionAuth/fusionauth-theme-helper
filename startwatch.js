@@ -19,6 +19,7 @@ fs.watch(tmpFolder, (event, filename) => {
       return;
     }
     const theme = {};
+    const localizedMessages = {};
 
     fs.readdirSync(tmpFolder).forEach(file => {
       if (file != filename) {
@@ -32,11 +33,18 @@ fs.watch(tmpFolder, (event, filename) => {
         let rawdata = fs.readFileSync(tmpFolder+file);
         obj[name] = String(rawdata)
       }
-      // check default messages
+
+      // messages
       if (filename.endsWith(".txt")) {
         // console.log(filename);
+        let name = file.replace(".txt","");
         let rawdata = fs.readFileSync(tmpFolder+file);
-        theme['defaultMessages'] = String(rawdata)
+        if (name == "defaultMessages") {
+          theme["defaultMessages"] = String(rawdata);
+        } else {
+          localizedMessages[name] = String(rawdata);
+          theme.localizedMessages = localizedMessages;
+        }
       }
 
       // check css

@@ -7,6 +7,7 @@ const tmpFolder = './'+process.env.TMP_DIR+'/';
 const fs = require('fs');
 const obj = {}
 const theme = {};
+const localizedMessages = {};
 
 fs.readdirSync(tmpFolder).forEach(file => {
   if (!file.endsWith(".ftl")) {
@@ -24,8 +25,14 @@ fs.readdirSync(tmpFolder).forEach(file => {
   if (!file.endsWith(".txt")) {
     return;
   }
+  let name = file.replace(".txt","");
   let rawdata = fs.readFileSync(tmpFolder+file);
-  theme["defaultMessages"] = String(rawdata)
+  if (name == "defaultMessages") {
+    theme["defaultMessages"] = String(rawdata);
+  } else {
+    localizedMessages[name] = String(rawdata);
+    theme.localizedMessages = localizedMessages;
+  }
 });
 
 fs.readdirSync(tmpFolder).forEach(file => {
