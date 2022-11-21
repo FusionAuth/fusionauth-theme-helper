@@ -4,6 +4,8 @@ This repository has some tools to help with FusionAuth theme management. More ab
 
 This repository is for helping you edit, develop and manage FusionAuth themes.
 
+Because these helper scripts uploads the results of your changes in real-time, it is best used on non-production systems.
+
 ## Prerequisites
 
 * curl
@@ -17,7 +19,7 @@ This repository is for helping you edit, develop and manage FusionAuth themes.
 * update `.env.sample` with your API key, FusionAuth hostname, and theme id and copy it to `.env`
 * you can modify the TMP_DIR to be whereever you'd like it to be, the default is `tmp` in the current directory.
 
-The API key must have `/api/theme` permissions, at least `GET` and `PATCH`.
+The provided API key must have `/api/theme` permissions for the `GET` and `PATCH` methods.
 
 ## Usage
 
@@ -37,4 +39,4 @@ You can do a final upload of whatever is in the TMP_DIR by running `upload.sh`.
 
 ## TODO
 
-Have the stylesheet and messages files handled as well. Only templates and default messages are supported currently.
+Have the messages files handled as well. Only templates and default messages are supported currently.
