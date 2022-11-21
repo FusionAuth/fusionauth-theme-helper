@@ -25,7 +25,7 @@ The provided API key must have `/api/theme` permissions for the `GET` and `PATCH
 
 ## Usage
 
-Run `download.sh` to pull down all the freemarker files.
+Run `download.sh` to pull down theme files, including freemarker, messages and stylesheet files.
 
 Commit them to version control.
 
