@@ -14,8 +14,8 @@ const client = new FusionAuthClient(apiKey, fusionauthUrl);
 fs.watch(tmpFolder, (event, filename) => {
   if (filename) {
     const obj = {}
-    if (! (filename.endsWith(".ftl") || filename.endsWith(".txt")) ) {
-      // ignore non template, non text files
+    if (! (filename.endsWith(".ftl") || filename.endsWith(".txt") || filename.endsWith(".css")) ) {
+      // ignore non template, non css, non text files
       return;
     }
     const theme = {};
@@ -37,6 +37,13 @@ fs.watch(tmpFolder, (event, filename) => {
         // console.log(filename);
         let rawdata = fs.readFileSync(tmpFolder+file);
         theme['defaultMessages'] = String(rawdata)
+      }
+
+      // check css
+      if (filename.endsWith(".css")) {
+        // console.log(filename);
+        let rawdata = fs.readFileSync(tmpFolder+file);
+        theme['stylesheet'] = String(rawdata)
       }
     });
     
