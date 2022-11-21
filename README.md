@@ -39,6 +39,3 @@ When done, commit changes to version control.
 
 You can do a final upload of whatever is in the TMP_DIR by running `upload.sh`.
 
-## TODO
-
-Have the messages files handled as well. Only templates and default messages are supported currently.
