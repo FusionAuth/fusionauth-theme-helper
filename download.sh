@@ -9,7 +9,7 @@ cat $TMP_DIR/themeout.json |jq '.theme.templates' > $TMP_DIR/templates.json
 # splits template files
 node splitfiles.js templates.json .ftl
 
-cat $TMP_DIR/themeout.json |jq '.theme.defaultMessages'  |sed 's/^"//' |sed 's/"$//' |node convert-newlines.js > $TMP_DIR/defaultMessages.txt
+cat $TMP_DIR/themeout.json |jq '.theme.defaultMessages'  |sed 's/^"//' |sed 's/"$//' |sed 's/\\"/"/g' |sed 's/\\\\/\\/g' |node convert-newlines.js > $TMP_DIR/defaultMessages.txt
 
 cat $TMP_DIR/themeout.json |jq '.theme.localizedMessages' > $TMP_DIR/localizedMessages.json
 node splitfiles.js localizedMessages.json .txt
