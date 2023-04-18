@@ -3,7 +3,7 @@
 
 mkdir -p $TMP_DIR
 
-curl -H 'Authorization: '$API_KEY  $FUSIONAUTH_URL/api/theme/$THEME_ID > $TMP_DIR/themeout.json
+curl -s -H 'Authorization: '$API_KEY  $FUSIONAUTH_URL/api/theme/$THEME_ID > $TMP_DIR/themeout.json
 cat $TMP_DIR/themeout.json |jq '.theme.templates' > $TMP_DIR/templates.json
 
 # splits template files
