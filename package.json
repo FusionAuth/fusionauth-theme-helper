@@ -4,6 +4,7 @@
   },
   "dependencies": {
     "dotenv": "^16.0.3",
-    "@fusionauth/typescript-client": "^1.41.0"
+    "@fusionauth/typescript-client": "^1.41.0",
+    "chokidar": "^3.5.3"
   }
 }
