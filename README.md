@@ -1,6 +1,6 @@
 # Theme helper
 
-This repository has tools to help with FusionAuth theme management. It offers syncing to and from your local system.
+This repository has tools to help with FusionAuth theme management. It offers syncing to and from your local system. It also has a tool to compare between two themes, which is useful when upgrading FusionAuth.
 
 This repository is for helping you edit, develop, and manage FusionAuth themes locally.
 
@@ -21,7 +21,7 @@ More about FusionAuth themes: https://fusionauth.io/docs/v1/tech/themes/
 
 The provided API key must have `/api/theme` permissions for the `GET` and `PATCH` methods.
 
-## Usage
+## Usage for storing a theme in version control
 
 Run `download.sh` to pull down theme files, including freemarker, messages, and stylesheet files.
 
@@ -37,3 +37,16 @@ When done, commit changes to version control.
 
 You can do a final upload of whatever is in the TMP_DIR by running `upload.sh`.
 
+## Usage for upgrading
+
+When [upgrading FusionAuth](https://fusionauth.io/docs/v1/tech/admin-guide/upgrade), there may be changes in newer theme templates. If you have a customized theme, you will need to manually apply these changes. To find the differences, you can download the base theme from the version you are upgrading to, and compare it to the base theme of your current FusionAuth installation. Update the variables in the `.env` file accordingly for each version. 
+
+Once you have both sets of theme files downloaded, you can run the `diff-themes.sh` script to compare the two sets of files. The script takes 2 arguments, the first is the path to the existing theme files, and the second is the path to the new theme files. For example:
+
+```sh
+./diff-themes.sh current-theme new-theme
+```
+
+The script will output a list of files that are different between the two sets of theme files, along with the differences. You can use this list to update your customized theme files. While you can directly use this output to find the changes, it might be useful to use a visual diff tool of your choice to help you make the changes, using the file list as a guide.
+
+Read more in the [Upgrade Guide](https://fusionauth.io/docs/v1/tech/admin-guide/upgrade)
