@@ -1,10 +1,12 @@
 #!/bin/bash
 
-for f in $( find $1 -type f  )
+current_theme=$1
+new_theme=$2
+
+for file_path in $(find $current_theme -type f)
 do
-  f1=$f
-  f2=$2/${f#*/}
-  # echo "compare: $f1 $f2"
-  diff --ignore-all-space <(sed -e '$a\' $f1) <(sed -e '$a\' $f2) \
-    && : || echo ${f#*/} 'has differences'
+  original_file=$file_path
+  modified_file=$new_theme/${file_path#*/}
+  diff --ignore-all-space <(sed -e '$a\' $original_file) <(sed -e '$a\' $modified_file) \
+    && : || echo ${file_path#*/} 'has differences'
 done
