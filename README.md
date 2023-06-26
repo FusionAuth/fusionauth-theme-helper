@@ -39,7 +39,11 @@ You can do a final upload of whatever is in the TMP_DIR by running `upload.sh`.
 
 ## Usage for upgrading
 
-When [upgrading FusionAuth](https://fusionauth.io/docs/v1/tech/admin-guide/upgrade), there may be changes in newer theme templates. If you have a customized theme, you will need to manually apply these changes. To find the differences, you can download the base theme from the version you are upgrading to, and compare it to the base theme of your current FusionAuth installation. Update the variables in the `.env` file accordingly for each version. You should use the [Default theme Id `75a068fd-e94b-451a-9aeb-3ddb9a3b5987`](https://fusionauth.io/docs/v1/tech/reference/limitations#default-configuration) as the `THEME_ID` value for both versions.
+When [upgrading FusionAuth](https://fusionauth.io/docs/v1/tech/admin-guide/upgrade), there may be changes in newer theme templates. If you have a customized theme, you will need to manually apply these changes. To find the differences, you can download the base theme from the version you are upgrading to, and compare it to the base theme of your current FusionAuth installation. Update the variables in the `.env` file accordingly for each version. You should use the [Default theme Id `75a068fd-e94b-451a-9aeb-3ddb9a3b5987`](https://fusionauth.io/docs/v1/tech/reference/limitations#default-configuration) as the `THEME_ID` value for both versions. Update the `TMP_DIR` before each download to save the themes to different folders. You can download the current and new themes using the download script:
+
+```sh
+./download.sh
+```
 
 Once you have both sets of theme files downloaded, you can run the `diff-themes.sh` script to compare the two sets of files. The script takes 2 arguments, the first is the path to the existing theme files, and the second is the path to the new theme files. For example:
 
