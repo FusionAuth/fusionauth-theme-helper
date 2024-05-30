@@ -2,5 +2,11 @@
   "dependencies": {
     "@fusionauth/cli": "^1.1.1",
     "dotenv": "^16.0.3"
+  },
+  "scripts": {
+    "diff": "./diff.sh",
+    "download": "./download.sh",
+    "upload": "./upload.sh",
+    "watch": "./watch.sh"
   }
 }
